@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="accueil" lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Resultat contest</title>
+	</head>
+	<style>
+		#app {
+			font-family: 'Avenir', Helvetica, Arial, sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			width: 600px;
+			margin: 0 auto;
+			color: #2c3e50;
+			margin-top: 60px;
+		}
+		div.header {
+			text-align: center;
+		}
+		ol {
+			margin-left: 100px;
+		}
+		.name {
+			display: inline-block;
+			width: 150px;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<div class="header">
+				<img alt="Vue logo" src="./logo.png">
+				<h1>Résultats du contest JavaScript</h1>
+			</div>
+			<ol>
+				<li v-for="r in resultats" :key="r.name">
+					<span class="name">{{r.name}}</span>
+					-> <strong>{{r.choix | transforme}}</strong>
+				</li>
+			</ol>
+		</div>
+		<script src="../lib/vue.js"></script>
+		<script src="resultats.js" type="text/javascript"></script>
+	</body>
+</html>
